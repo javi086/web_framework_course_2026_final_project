@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add AI Job Posting</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1>Post a New AI Job</h1>
+  <p><a href="/">Back to Home</a></p>
+
+  <form action="/add" method="POST">
+    <div>
+      <label for="job_title">Job Title:</label><br>
+      <input type="text" id="job_title" name="job_title" placeholder="e.g. AI Prompt Engineer">
+    </div>
+    <br>
+    <div>
+      <label for="job_category">Job Category:</label><br>
+      <input type="text" id="job_category" name="job_category" placeholder="e.g. AI Engineering">
+    </div>
+    <br>
+    <div>
+      <label for="annual_salary_usd">Annual Salary (USD):</label><br>
+      <input type="number" id="annual_salary_usd" name="annual_salary_usd" placeholder="e.g. 145000">
+    </div>
+    <br>
+    <div>
+      <label for="city">City:</label><br>
+      <input type="text" id="city" name="city" placeholder="e.g. Toronto">
+    </div>
+    <br>
+    <div>
+      <label for="country">Country:</label><br>
+      <input type="text" id="country" name="country" placeholder="e.g. Canada">
+    </div>
+    <br>
+    <div>
+      <label for="required_skills">Required Skills (separated by comma or pipe):</label><br>
+      <input type="text" id="required_skills" name="required_skills" placeholder="e.g. Python, PyTorch, SQL">
+    </div>
+    <br>
+    <button type="submit">Submit Job Posting</button>
+  </form>
+</body>
+</html>

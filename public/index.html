@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AI Jobs</title>
+    </head>
+    <body>
+        <h1>Welcome to AI Jobs Dataset Explorer</h1>
+        <p><strong>Student Name:</strong> Javier</p>
+        <p><strong>Student ID:</strong> N01753766</p>
+        <p><strong>Topic:</strong> AI Jobs in 2025-2026</p>
+
+    <h2>Available Routes</h2>
+    <ul>
+        <li><a href="/data">View All Data (/data)</a></li>
+        <li><a href="/about">About Page (/about)</a></li>
+        <li><a href="/random">Random Record (/random)</a></li>
+    </ul>
+
+    <hr>
+    <h2>Search Jobs by Keyword</h2>
+    <form method="GET" action="/search">
+      <label>Search Job Title or Skills</label>
+      <input type="text" name="keyword" placeholder="e.g. Python"> 
+      <br>
+      <button type="submit">Search Jobs</button>    
+    </form>
+
+    <hr>
+
+    <h2>Filter Jobs by Category</h2>
+    <form method="GET" action="/filter">
+        <label>Category:</label>
+        <input type="text" name="category" placeholder="e.g. Engineering" required>
+        <br>
+        <button type="submit">Filter</button>
+    </form>
+    </body>
+</html>

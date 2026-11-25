@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= pageTitle %></title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1><%= pageTitle %></h1>
+    <p>
+        <a href="/">Home</a> | 
+        <a href="/add">Add New Job</a> | 
+        <a href="/table_in_js">Vanilla JS Version</a>
+    </p>
+
+    <table border="1" cellpadding="6" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Job ID</th>
+                <th>Job Title</th>
+                <th>Category</th>
+                <th>Location (Nested Object)</th>
+                <th>Required Skills (Array)</th>
+                <th>Salary (USD)</th>
+                <th>Image</th>
+                <th>Details Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% records.forEach((record) => { %>
+                <tr>
+                    <td><%= record.job_id || record.id %></td>
+                    <td><strong><%= record.job_title || record.title %></strong></td>
+                    <td><%= record.job_category || record.category %></td>
+                    
+                    <!-- Nested Object -->
+                    <td>
+                        <%= record.location ? record.location.city : (record.city || 'Remote') %>, 
+                        <%= record.location ? record.location.country : (record.country || 'Global') %>
+                    </td>
+                    
+                    <td>
+                        <%= (record.skillsList && record.skillsList.length > 0) ? record.skillsList.join(', ') : record.required_skills %>
+                    </td>
+
+                    <td>$<%= Number(record.annual_salary_usd || 0).toLocaleString() %></td>
+                    
+                    <!-- Enriched Image -->
+                    <td>
+                        <img src="<%= record.imageUrl %>" alt="<%= record.imageAlt %>" width="70">
+                    </td>
+
+                    <!-- Detail Link -->
+                    <td>
+                        <a href="/data/<%= record.job_id || record.id %>">View JSON</a>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>
